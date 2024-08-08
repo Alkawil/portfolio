@@ -1,52 +1,64 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const timeline = document.querySelector('.timeline');
-    const containers = document.querySelectorAll('.container');
-    const projectsSection = document.getElementById('projects');
+document.addEventListener('DOMContentLoaded', function () {
+    // Smooth scrolling for anchor links
+    const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+    smoothScrollLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
 
-    function handleScroll() {
-        const sectionTop = projectsSection.offsetTop;
-        const sectionHeight = projectsSection.offsetHeight;
-        const scrollPosition = window.scrollY + window.innerHeight;
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 50, // Adjust offset for fixed navbar
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 
-        // Check if the scroll position has reached the Projects section
-        if (scrollPosition > sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            timeline.style.height = '100%';
-            containers.forEach(container => container.classList.add('visible'));
-        } else {
-            timeline.style.height = '0';
-            containers.forEach(container => container.classList.remove('visible'));
-        }
-    }
+    // Intersection Observer for lazy loading and animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
 
-    // Listen for scroll events
-    window.addEventListener('scroll', handleScroll);
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active'); // Add class when in view
+                observer.unobserve(entry.target); // Stop observing once the element is in view
+            }
+        });
+    };
 
-    // Trigger scroll event on page load to check if the user starts at the Projects section
-    handleScroll();
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    const elementsToAnimate = document.querySelectorAll('.timeline, .container, .skill-card');
+    elementsToAnimate.forEach(el => observer.observe(el));
+
+    // Toggle Skills Section
+    const toggleSkillsButton = document.getElementById('toggleSkills');
+    const skillsContainer = document.getElementById('skillsContainer');
+
+    toggleSkillsButton.addEventListener('click', () => {
+        skillsContainer.classList.toggle('skills-hidden');
+        skillsContainer.style.maxHeight = skillsContainer.classList.contains('skills-hidden') ? '0' : '1000px';
+    });
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    const textElement = document.getElementById('nav-left');
-    const text = textElement.textContent;
-    textElement.textContent = '';
 
-    let index = 0;
-    const typingSpeed = 50; // Adjust typing speed here
 
-    function type() {
-        if (index < text.length) {
-            textElement.textContent += text.charAt(index);
-            index++;
-            setTimeout(type, typingSpeed);
-        } else {
-            textElement.parentElement.querySelector('.typing-container::after').style.display = 'none'; // Hide the cursor
-            textElement.parentElement.classList.add('typing-done'); // Add class to remove cursor
-        }
-    }
+ 
 
-    type();
-});
+
+
+
+
+
+
+
 
 
 

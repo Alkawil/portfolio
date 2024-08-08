@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+
 </head>
+
 <body>
     <nav>
-        <div id="nav-left">Alka Rhine Wilson</div>
+        <div id="nav-left">My Portfolio</div>
         <ul class="nav-right">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -20,23 +25,58 @@
     </nav>
 
     <section id="home">
-        <h1>Home</h1>
-        <!-- Content here -->
+        <div class="video-background">
+            <video autoplay loop muted class="bg-video">
+                <source src="images/8645035-uhd_4096_2160_24fps.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="intro">
+            <h1 class="intro-title painted-font">Hello, I'm <span class="highlight">Alka Rhine Wilson</span></h1>
+            <p class="intro-text">I'm an aspiring software engineer who loves working with backend technologies and
+                artificial intelligence. Creating innovative solutions is my passion. Welcome to my portfolio!<br>With a strong foundation in Python, Databases, Django, and AI, I thrive on tackling
+                challenging projects that make a difference. I'm eager to
+                contribute to dynamic teams and continuously learn in a fast-paced environment. My goal is to leverage
+                technology to solve real-world problems.</p>
+            <p class="intro-text">Let's build something amazing together!</p>
+            <a href="#about" class="btn">Learn More About Me</a>
+        </div>
     </section>
 
     <section id="about">
-        <h1>About</h1>
-        <!-- Content here -->
+        <img src="images/IMG-20240403-WA0001~3.jpg" alt="Profile Picture">
+        <div class="content-container">
+            <div class="text-container">
+                <p>Hello! I'm Alka Rhine Wilson, a passionate software engineer based in Charlotte, NC.<br><br> I’m currently pursuing a Bachelor of Science in Computer Science with a concentration in AI, Robotics & Gaming and a minor in Biology at the University of North Carolina at Charlotte (UNCC).<br><br> My journey in technology has equipped me with a solid foundation in various programming languages and tools. I’m eager to leverage my skills to contribute to innovative projects and solve real-world problems.</p>
+            </div>
+            <button id="toggleSkills">Skills</button>
+        </div>
+
+        <div id="skillsContainer" class="skills-hidden">
+            <div class="skill-card">Python</div>
+            <div class="skill-card">Databases</div>
+            <div class="skill-card">Django</div>
+            <div class="skill-card">Data Structures</div>
+            <div class="skill-card">Algorithms</div>
+            <div class="skill-card">GitHub</div>
+            <div class="skill-card">Linux/Unix</div>
+            <div class="skill-card">HTML</div>
+            <div class="skill-card">CSS</div>
+            <div class="skill-card">JavaScript</div>
+            <div class="skill-card">ReactJS</div>
+        </div>
     </section>
+    
     <section id="projects">
         <h1>Projects</h1>
         <div class="timeline">
-            <div class="container left-container ">
+            <div class="container left-container">
                 <div class="timeline-dot"></div>
                 <div class="text-box">
                     <h2>Responsive Restaurant Website</h2>
                     <small>Fall 2023</small>
-                    <p>Created a fully responsive web design that allows users to order, review, and explore specialty meals in a slider format regardless of the type of device being used with a completely responsive approach.</p>
+                    <p>Created a fully responsive web design that allows users to order, review, and explore specialty
+                        meals in a slider format regardless of the type of device being used with a completely
+                        responsive approach.</p>
                     <span class="left-container-arrow"></span>
                 </div>
             </div>
@@ -45,14 +85,14 @@
                 <div class="text-box">
                     <h2>Web Page Development</h2>
                     <small>Fall 2022</small>
-                    <p>Created a web-based forum that provides a platform for music fans who want to have passionate and involved discussions about music and artists.</p>
+                    <p>Created a web-based forum that provides a platform for music fans who want to have passionate and
+                        involved discussions about music and artists.</p>
                     <span class="right-container-arrow"></span>
                 </div>
             </div>
             <!-- More containers as needed -->
         </div>
     </section>
-    
 
     <section id="education">
         <h1>Education</h1>
@@ -60,13 +100,13 @@
     </section>
 
     <footer>
-        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/yourusername/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/Alkawil" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/alka-rhine-wilson-147629220/" target="_blank">LinkedIn</a>
     </footer>
+
 </body>
+
 </html>
-
-
 
 
 
