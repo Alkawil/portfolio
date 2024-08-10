@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Smooth scrolling for anchor links
     const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
     smoothScrollLinks.forEach(link => {
         link.addEventListener('click', function (e) {
@@ -9,14 +8,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 50, // Adjust offset for fixed navbar
+                    top: targetElement.offsetTop - 50, 
                     behavior: 'smooth'
                 });
             }
         });
     });
 
-    // Intersection Observer for lazy loading and animations
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -26,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const observerCallback = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('active'); // Add class when in view
-                observer.unobserve(entry.target); // Stop observing once the element is in view
+                entry.target.classList.add('active'); 
+                observer.unobserve(entry.target); 
             }
         });
     };
@@ -37,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const elementsToAnimate = document.querySelectorAll('.timeline, .container, .skill-card');
     elementsToAnimate.forEach(el => observer.observe(el));
 
-    // Toggle Skills Section
     const toggleSkillsButton = document.getElementById('toggleSkills');
     const skillsContainer = document.getElementById('skillsContainer');
 
