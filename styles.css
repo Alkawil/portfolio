@@ -128,9 +128,9 @@ nav {
     position: relative;
     z-index: 2;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Add background to make text more readable */
+    background-color: rgba(0, 0, 0, 0.2); /* Add background to make text more readable */
     border-radius: 10px; /* Rounded corners for better aesthetics */
-    backdrop-filter: blur(10px); /* Blur effect behind text */
+    backdrop-filter: blur(1px); 
 }
 
 .intro-title {
@@ -151,8 +151,9 @@ nav {
 
 .btn {
     display: inline-block;
-    background-color: #00FFFF; /* Cyan color for button */
+    background-color: #00FFFF; 
     color: #000; /* Black text */
+    box-shadow: 0 6px 12px white;
     padding: 10px 20px;
     border-radius: 20px;
     text-decoration: none;
@@ -161,7 +162,8 @@ nav {
 }
 
 .btn:hover {
-    background-color: #fff; /* White background on hover */
+    background-color: #fff; 
+    box-shadow: 0 6px 12px cyan;
 
 }
 
@@ -171,8 +173,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     padding: 50px;
-    animation: slideInUp 1s ease-out forwards; /* Animation for about section */
-    animation-delay: 0.3s;
+    animation: slideInUp 1s ease-out forwards; 
     animation-fill-mode: both;
 }
 
@@ -184,8 +185,8 @@ nav {
     border-width: 100px;
     width: 400px;
     height: 500px;
-    object-fit:fill;
-    transform: translateY(50px); /* Start off screen */
+    object-fit:scale-down;
+    transform: translateY(50px); 
 
 }
 
@@ -196,7 +197,6 @@ nav {
     font-size: large;
     max-width: 1000px; /* Max width for readability */
     opacity: 0;
-    background-color: #00FFFF;
     transform: translateY(50px);
     animation: fadeInUp 2.5s ease-out forwards;
     animation-delay: 1.9s; /* Delay the text container fade-in */
@@ -205,9 +205,9 @@ nav {
     padding-bottom: 10px;
     margin-top: 80px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-    color:black; /* White text color */
-    text-align: center; /* Center the text */
-    background: linear-gradient(130deg,cyan,lightblue,grey,pink);
+    color:white; 
+    text-align: center; 
+    
 }
 
 
@@ -218,7 +218,7 @@ nav {
     font-size: 16px;
     border-radius: 100px;
     display: inline-block;
-    background-color: #00FFFF; /* Cyan button */
+    background-color: #00FFFF; 
     border-radius: 30px;;
     color: #000;
     padding: 10px 20px;
@@ -230,6 +230,7 @@ nav {
 
 #toggleSkills:hover {
     background-color: #fff;
+    box-shadow: 0 3px 6px white;
 
 }
 
@@ -238,7 +239,7 @@ nav {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
-    transition: max-height 0.3s ease-out; /* Transition for collapsing */
+    transition: max-height 0.3s ease-out; 
     overflow: hidden;
 }
 
@@ -254,7 +255,7 @@ nav {
     border-radius: 20px;
     box-shadow: 0 20px 5px rgba(0, 0, 0, 0.1);
     opacity: 0; /* Start hidden */
-    transform: translateY(20px); /* Start off screen */
+    transform: translateY(20px); 
     animation: fadeInUp 4.5s ease-out forwards; /* Animation for skill cards */
 }
 
@@ -300,89 +301,348 @@ nav {
     }
 }
 
+/* Project Section */
+#projects {
+    padding: 50px 0;
+    background-color: black;
+}
+
+/* Timeline Container */
 .timeline {
     position: relative;
-    padding: 50px 0;
-    width: 100%;
-    background-color: #1c1c1c;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    opacity: 0;
-    transform: translateY(50px);
-    animation: slideInUp 1s ease-out forwards;
-    animation-delay: 0.3s;
-    animation-fill-mode: both;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
 }
 
 .container {
     position: relative;
-    width: 50%;
-    padding: 20px;
-    box-sizing: border-box;
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 0.5s ease-out forwards;
-    animation-delay: 0.5s;
-    animation-fill-mode: both;
+    padding: 20px 40px;
+    width: 45%;
+    border-radius: 30px;
+    background-color: #1d1d1d;
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 50px;
+    
 }
 
+
 .left-container {
-    left: 0;
+    left: 100px;
+    transform: translateX(-50%);
+    text-align: right;
 }
 
 .right-container {
-    left: 50%;
+    left:40%;
+    transform: translateX(50%);
+    text-align: left;
 }
 
 .timeline-dot {
-    width: 10px;
-    height: 10px;
-    background-color: #00FFFF;
-    border-radius: 50%;
     position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #00FFFF;
+    border-radius: 1000%;
+    left: -40px;
     top: 20px;
-    left: calc(50% - 5px);
 }
+
 
 .text-box {
-    background-color: #282828;
-    color: #fff;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    background-color: black;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.left-container-arrow {
-    content: '';
-    position: absolute;
-    top: 30px;
-    right: -15px;
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 10px solid #282828;
-}
-
+.left-container-arrow,
 .right-container-arrow {
-    content: '';
-    position: absolute;
-    top: 30px;
-    left: -15px;
     width: 0;
     height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 10px solid #282828;
+    position: absolute;
+    top: 10px;
+    border-style: solid;
 }
+
+
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #00FFFF;
+}
+
+small {
+    display: block;
+    font-size: 14px;
+    color: #B0B0B0;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #dddddd;
+}
+
+/* Hover Effects */
+.container:hover {
+    transform: scale(1.05);
+    background-color: rgba(0, 255, 255, 0.2); 
+    color: black;
+    box-shadow: 0 6px 12px white;
+}
+
+.text-box:hover {
+    background-color: rgba(0, 0, 0, 0.8); 
+}
+
+
+/* Experience Section Styles */
+#experience {
+    padding: 30px;
+    background-color: black;
+}
+
+.experience-item {
+    max-width: 800px;
+    margin: auto;
+}
+
+.section-header h2 {
+    color:white; /* Highlight color */
+    font-size: 2em;
+    border-bottom: 2px solid cyan;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.job, .certification {
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(193, 39, 39, 0.1);
+    padding: 20px;
+    position: relative;
+}
+
+.job::before, .certification::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: cyan;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.job-content, .certification-content {
+    padding-left: 20px;
+}
+
+h3 {
+    color: #333;
+    font-size: 1.5em;
+}
+
+p {
+    margin: 10px 0;
+    color: #e8e2e2;
+    line-height: 1.6;
+}
+
+.certification-content p, .job-content p {
+    margin: 5px 0;
+    color:black;
+}
+
+
+.job:hover, .certification:hover {
+    background-color:rgb(176, 243, 243);
+    font-style:oblique;
+    box-shadow: 0 6px 12px white;
+    transform: scale(1.02);
+    transition: background-color 2.3s, transform 3.3s;
+}
+
+#education{
+    background-color: black;
+}
+
+.edu-timeline{
+    position: relative;
+    max-width: 1200px;
+    margin: 100px auto;
+
+}
+
+.edu-container{
+    padding-left: 100px;
+    padding-right: 1px;
+    position: relative;
+    border-radius: 20px;
+    width:40%;
+    background:white;
+    animation:movedown 5s linear forwards;
+    opacity :1;
+    box-shadow: 0 0 20px cyan;
+
+}
+
+.edu-container:nth-child(2){
+    animation-delay: 1s;
+}
+.edu-container:nth-child(3){
+    animation-delay: 2s;
+}
+
+@keyframes movedown {
+    0%{
+        height:1;
+        transform: translateY(-30px);
+    }
+    100%{
+        height:1;
+        transform: translateY(0px);
+    }
+}
+.text{
+    padding: 20px 30px;
+    color: white;
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px;
+}
+.left-edu{
+    left: 0;
+}
+.right-edu{
+    left:52%;
+}
+ 
+.edu-container img{
+    position:absolute;
+    width: 40px;
+    border-radius: 50%;
+    right:-20px;
+    top:32px;
+    z-index: 10;
+    fill:red;
+
+
+ }
+
+
+ .right-edu img{
+    left:-20px;
+ }
+
+.edu-timeline::after{
+    content:'';
+    position:absolute;
+    width:6px;
+    height:100%;
+    background:cyan;
+    top:0;
+    left: 50%;
+    margin-left: -3px;
+   z-index: 3;
+   animation: moveline 6s linear forwards;
+ }
+
+@keyframes moveline {
+    0%{
+        height:0;
+    }
+    100%{
+        height:100;
+    }
+}
+
+ .text h2{
+    font-weight: 600;
+    color:Black;
+ }
+ .text small{
+    display: inline-block;
+    margin: 15px;
+    color:black;
+ }
+ .text p{
+    display: inline-block;
+    margin: 20px;
+    color:black;
+ }
+
+.left-arrow{
+    height: 0;
+    width:0;
+    position: absolute;
+    top:28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid white;
+    right:-20px;
+
+}
+
+.right-arrow{
+    height: 0;
+    width:0;
+    position: absolute;
+    top:28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 20px solid white;
+    left:-20px;
+
+}
+
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff; /* Button color */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.contact-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+}
+
+
+
 
 footer {
-    background-color: #282828;
-    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8); /* Black with 80% opacity */
+    color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 footer a {
@@ -395,6 +655,7 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
 
 
 
